@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'qr_scan_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,6 +43,18 @@ class MyHomePage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const QRScanScreen(),
+            ),
+          );
+        },
+        tooltip: 'Scan any QR',
+        child: const Icon(Icons.qr_code_scanner),
       ),
     );
   }
